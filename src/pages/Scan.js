@@ -1,23 +1,24 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import Header from "../components/navber/Header";
 import Footer from "../components/navber/Footer";
 import CardDetail from "../components/detail/CardDetail";
 import Document from "../img/document.png";
-import Document2 from "../img/document2.png";
+// import Document2 from "../img/document2.png";
 import { Company } from "../data/company";
 
-import { Link } from "react-router-dom";
+import DocumentScannerIcon from "@mui/icons-material/DocumentScanner";
 
 export default function Scan() {
   const [query, setQuery] = useState("");
-  console.log(
-    Company.filter((company) => company.number.toLowerCase().includes("50"))
-  );
+  // console.log(
+  //   Company.filter((company) => company.number.toLowerCase().includes("50"))
+  // );
 
   return (
     <>
-      <div className="w-[390px] h-[844px]  bg-gray-200 mx-auto border py-4 pl-2 pr-4">
+      <div className="w-[390px] h-[844px]  bg-gray-200 mx-auto ">
         {/* Header */}
         <Header name="Scan" />
         {/* End Header */}
@@ -69,25 +70,30 @@ export default function Scan() {
           <div className="text-xs">
             <p>Results</p>
           </div>
-          {Company.filter((company) =>
-            company.number.toLowerCase().includes(query)
+          {Company.filter(
+            (company) =>
+              company.date.toLowerCase().includes(query) ||
+              company.number.toLowerCase().includes(query) ||
+              company.name.toLowerCase().includes(query)
           ).map((item) => {
-            {
-              // console.log("first", item);
-              return (
-                <CardDetail
-                  key={item.id}
-                  document={Document}
-                  date={item.date}
-                  code={item.number}
-                  name={item.name}
-                />
-              );
-            }
+            // console.log("first", item);
+            return (
+              <CardDetail
+                key={item.id}
+                document={Document}
+                date={item.date}
+                code={item.number}
+                name={item.name}
+              />
+            );
           })}
           <Link to={`/DoScan`}>
-            <button className="bg-blue-500 hover:bg-blue-700 w-80 text-white font-bold py-2 px-4 rounded">
-              |||| Scan
+            <button className="flex justify-center bg-blue-500 hover:bg-blue-700 w-80 text-white font-bold py-2 px-4 rounded">
+              <div className="rotate-90">
+                <DocumentScannerIcon />
+              </div>
+              {/* |||| */}
+              <div>Scan</div>
             </button>
           </Link>
         </div>

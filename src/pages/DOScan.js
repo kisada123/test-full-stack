@@ -1,5 +1,5 @@
 import HeaderDetail from "../components/navber/HeaderDetail";
-import Footer from "../components/navber/Footer";
+// import Footer from "../components/navber/Footer";
 import Document2 from "../img/document2.png";
 
 import { Link } from "react-router-dom";

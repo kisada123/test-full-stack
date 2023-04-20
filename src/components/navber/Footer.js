@@ -7,7 +7,7 @@ export default function Footer() {
   const location = useLocation();
 
   return (
-    <div className=" bg-white my-0.5 w-[364px] h-[50px]  flex  justify-between px-6 bottom-0 fixed">
+    <div className=" bg-white my-0.5 w-[390px] h-[50px]  flex  justify-between px-6 bottom-0 fixed">
       <Link to="/">
         {location.pathname === "/" ? (
           <div className="flex flex-col items-center">

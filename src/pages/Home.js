@@ -1,11 +1,18 @@
+import { useEffect } from "react";
+
 import Header from "../components/navber/Header";
 import Footer from "../components/navber/Footer";
 import { Chart, initTE } from "tw-elements";
 
 export default function Home() {
+  useEffect(() => {
+    // Initialize the chart
+    initTE({ Chart });
+  }, []);
+
   return (
     <>
-      <div className="w-[390px] h-auto bg-gray-200 mx-auto ">
+      <div className="w-[390px] bg-gray-200 mx-auto ">
         {/* Header */}
         <Header name="Home" />
         {/* End Header */}

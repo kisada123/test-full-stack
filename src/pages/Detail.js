@@ -1,5 +1,5 @@
 import HeaderDetail from "../components/navber/HeaderDetail";
-import Footer from "../components/navber/Footer";
+// import Footer from "../components/navber/Footer";
 import Document from "../img/document.png";
 
 export default function Detail() {
